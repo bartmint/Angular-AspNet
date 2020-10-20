@@ -1,0 +1,11 @@
+C:\Users\barte\source\repos\WhatsUP\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\Users\barte\source\repos\WhatsUP\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\Users\barte\source\repos\WhatsUP\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Users\barte\source\repos\WhatsUP\Application\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\barte\source\repos\WhatsUP\Application\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.csprojAssemblyReference.cache
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfoInputs.cache
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfo.cs
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.dll
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.pdb
