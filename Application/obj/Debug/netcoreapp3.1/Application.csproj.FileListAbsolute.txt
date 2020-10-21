@@ -9,3 +9,4 @@ C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Applicat
 C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.csproj.CopyComplete
 C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.dll
 C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\Users\barte\source\repos\WhatsUP\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache

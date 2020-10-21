@@ -12,3 +12,4 @@ C:\Users\barte\source\repos\WhatsUP\Infrastructure\obj\Debug\netcoreapp3.1\Infra
 C:\Users\barte\source\repos\WhatsUP\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
 C:\Users\barte\source\repos\WhatsUP\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
 C:\Users\barte\source\repos\WhatsUP\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.genruntimeconfig.cache
+C:\Users\barte\source\repos\WhatsUP\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WhatsUp.API.ViewModels;
 
 namespace WhatsUp.API.Controllers
 {
@@ -47,8 +48,23 @@ namespace WhatsUp.API.Controllers
             if (!result.Succeeded) 
                 return BadRequest(result.Errors);
 
-            var userToReturn = new UserDTO();
+            var userToReturn = new UserDTO();//zmapowac na zwracane wartosci, narazie zwraca tylko token
             userToReturn.Token =await _tokenRepository.CreateToken(user);
+
+            return userToReturn;
+        }
+        [HttpPost("login")]
+        public async Task<ActionResult<UserDTO>> Login(UserForLoginDTO userForLoginDTO)
+        {
+            var userFromRepo =await _userManager.FindByEmailAsync(userForLoginDTO.Email);
+
+            if (userFromRepo == null) return Unauthorized();
+
+            var resultLogin =await _signInManager.CheckPasswordSignInAsync(userFromRepo, userForLoginDTO.Password, false);
+            if (!resultLogin.Succeeded) return Unauthorized();
+
+            var userToReturn = new UserDTO();
+            userToReturn.Token = await _tokenRepository.CreateToken(userFromRepo);
 
             return userToReturn;
         }

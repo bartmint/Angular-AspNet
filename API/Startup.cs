@@ -1,21 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Application;
+using API.Helpers;
 using Domain;
 using Infrastructure;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-
+using WhatsUp.API.Extensions;
+using AutoMapper;
 
 namespace API
 {
@@ -32,15 +26,10 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddInfrastructure();
+            services.AddInfrastructure(Configuration);
             services.AddDomain();
-            services.AddApplication();
-
-            //Database
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
-            });
+            services.AddIdentity(Configuration);
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
         }
 
