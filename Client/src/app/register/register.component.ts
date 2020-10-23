@@ -40,7 +40,9 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
      userName: ['', [Validators.required, Validators.minLength(4)]],
      email: ['', [Validators.required, Validators.email]],
-     password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20), this.passwordNotSameAsUserName('userName')]],
+     password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20),
+       this.passwordNotSameAsUserName('userName'), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[!-~]{5,}$')]],
+
      confirmPassword: ['', [Validators.required, this.matchPassword('password')]],
     });
   }
@@ -54,6 +56,6 @@ export class RegisterComponent implements OnInit {
       return control?.value !== control?.parent?.controls[userName].value ? null : {isNotMatching: true};
     };
   }
-
+  
 
 }
