@@ -40,7 +40,7 @@ namespace WhatsUp.API.Controllers
                 return BadRequest("The Email Provided is already taken");
 
             if (await _accountRepository.UserUsernameExists(userForRegisterDTO.UserName))
-                return BadRequest("The Username Provided is already taken");
+                return BadRequest("The Username Provided is already taken"); //do wywalenia
 
             var user = _mapper.Map<AppUser>(userForRegisterDTO);
 
@@ -67,6 +67,11 @@ namespace WhatsUp.API.Controllers
             userToReturn.Token = await _tokenRepository.CreateToken(userFromRepo);
 
             return userToReturn;
+        }
+        [HttpGet]
+        public ActionResult Get()
+        {
+            return Ok("retard");
         }
     }
 }

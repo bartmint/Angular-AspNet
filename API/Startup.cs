@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WhatsUp.API.Extensions;
 using AutoMapper;
+using FluentValidation.AspNetCore;
+using WhatsUp.API.ViewModels;
 
 namespace API
 {
@@ -25,12 +27,12 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddInfrastructure(Configuration);
+            services.AddControllers().AddFluentValidation();
+            services.AddDatabase(Configuration);
             services.AddDomain();
             services.AddIdentity(Configuration);
+            services.AddValidation();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +53,7 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+            
         }
     }
 }

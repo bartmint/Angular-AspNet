@@ -12,7 +12,7 @@ namespace Infrastructure
 {
     public static class ServicesDI
     {
-        public static  IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static  IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
             //Database
             services.AddDbContext<AppDbContext>(options =>

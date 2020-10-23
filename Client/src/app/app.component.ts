@@ -8,22 +8,15 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  value: any;
-  title = 'Client';
+
   baseUrl: string = environment.apiUrl;
   constructor(private http: HttpClient){}
 
 
   ngOnInit() {
-    this.get();
+    
+    }
   }
-  get(){
-    this.http.get(this.baseUrl+'user').subscribe(response=>{
-      this.value=response;
-      console.log(this.value);
-    }, error=>{
-      console.log(error);
-    })
-  }
- 
-}
+
+
+

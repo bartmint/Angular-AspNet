@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Sji8XDQWQKTMi6DaIPMrFWiHYc/awPTEirVGgcNjcm9psxTVQD0hpBuqamis5eXpzn9hXZ3CS2oZ18cPBbNqvg==",
+  "dgSpecHash": "7L8uLU8qu3cNbOzO0IB0X8HDbD+TBYtOjLxjEF1S5XEcFIxK1XU92cKgOrNFaFrGRHBtLhJAHhLsy1HLFsun8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\API\\WhatsUp.API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\barte\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\automapper.contrib.autofac.dependencyinjection\\5.1.0\\automapper.contrib.autofac.dependencyinjection.5.1.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.2.0\\fluentvalidation.aspnetcore.9.2.0.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.2.0\\fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

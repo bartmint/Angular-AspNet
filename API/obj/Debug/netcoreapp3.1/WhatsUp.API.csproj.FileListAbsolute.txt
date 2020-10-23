@@ -80,5 +80,9 @@ C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\Autofac.dll
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\AutoMapper.Contrib.Autofac.DependencyInjection.dll
+C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.csproj.CoreCompileInputs.cache
+C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcApplicationPartsAssemblyInfo.cache
