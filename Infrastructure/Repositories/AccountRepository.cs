@@ -1,4 +1,5 @@
 ﻿using Domain.Abstractions;
+using Domain.Models;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,6 +24,10 @@ namespace Infrastructure.Repositories
         public async Task<bool> UserUsernameExists(string username)
         {
             return await _ctx.Users.AnyAsync(x => x.UserName == username);
+        }
+        public async Task<AppUser> GetUser(string email)
+        {
+            return await _ctx.Users.FirstOrDefaultAsync(x => x.Email == email);
         }
     }
 }

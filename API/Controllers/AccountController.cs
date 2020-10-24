@@ -4,6 +4,7 @@ using Domain.Abstractions;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using NETCore.MailKit.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +13,26 @@ using WhatsUp.API.ViewModels;
 
 namespace WhatsUp.API.Controllers
 {
-    public class AccountController: BaseApiController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AccountController: Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
         private readonly IAccountRepository _accountRepository;
         private readonly ITokenRepository _tokenRepository;
+        private readonly IEmailService _emailService;
 
         public AccountController(SignInManager<AppUser> signInManager, ITokenRepository tokenRepository,
-            UserManager<AppUser> userManager, IMapper mapper, IAccountRepository accountRepository)
+            UserManager<AppUser> userManager, IMapper mapper, IAccountRepository accountRepository, IEmailService emailService)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _mapper = mapper;
             _accountRepository = accountRepository;
             _tokenRepository = tokenRepository;
+            _emailService = emailService;
         }
 
 
@@ -48,11 +53,22 @@ namespace WhatsUp.API.Controllers
             if (!result.Succeeded) 
                 return BadRequest(result.Errors);
 
+            //email
+            var userToEmail =await _accountRepository.GetUser(user.Email);
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(userToEmail);
+            if (String.IsNullOrEmpty(code)) return BadRequest("bblabla");
+            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code });
+            await _emailService.SendAsync(userToEmail.Email, "email verify", link);
+
             var userToReturn = new UserDTO();//zmapowac na zwracane wartosci, narazie zwraca tylko token
             userToReturn.Token =await _tokenRepository.CreateToken(user);
 
             return userToReturn;
         }
+        public IActionResult VerifyEmail(string userId, string code) =>  View();
+        public IActionResult EmailVerification() =>  View();
+        
+
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> Login(UserForLoginDTO userForLoginDTO)
         {

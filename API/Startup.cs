@@ -12,6 +12,8 @@ using WhatsUp.API.Extensions;
 using AutoMapper;
 using FluentValidation.AspNetCore;
 using WhatsUp.API.ViewModels;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
 
 namespace API
 {
@@ -33,6 +35,7 @@ namespace API
             services.AddIdentity(Configuration);
             services.AddValidation();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
+            services.AddMailKit(config =>  config.UseMailKit(Configuration.GetSection("Email").Get<MailKitOptions>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

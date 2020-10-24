@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,5 +10,6 @@ namespace Domain.Abstractions
     {
         Task<bool> UserEmailExists(string email);
         Task<bool> UserUsernameExists(string username);
+        Task<AppUser> GetUser(string email);
     }
 }
