@@ -92,11 +92,3 @@ C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcA
 C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\WhatsUp.API.Views.dll
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\WhatsUp.API.Views.pdb
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.RazorAssemblyInfo.cache
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.RazorAssemblyInfo.cs
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.TagHelpers.input.cache
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.TagHelpers.output.cache
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.RazorCoreGenerate.cache
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\Razor\Views\Email\VerifyEmail.cshtml.g.cs
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.RazorTargetAssemblyInfo.cs
-C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.Views.pdb

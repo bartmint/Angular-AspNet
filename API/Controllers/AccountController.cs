@@ -13,9 +13,8 @@ using WhatsUp.API.ViewModels;
 
 namespace WhatsUp.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountController: Controller
+    
+    public class AccountController: BaseApiController
     {
         private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
@@ -37,7 +36,7 @@ namespace WhatsUp.API.Controllers
 
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDTO>> Register(UserForRegisterDTO userForRegisterDTO)
+        public async Task<ActionResult> Register(UserForRegisterDTO userForRegisterDTO)
         {
             userForRegisterDTO.UserName = userForRegisterDTO.UserName.ToLower();
 
@@ -57,17 +56,23 @@ namespace WhatsUp.API.Controllers
             var userToEmail =await _accountRepository.GetUser(user.Email);
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(userToEmail);
             if (String.IsNullOrEmpty(code)) return BadRequest("bblabla");
-            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code });
-            await _emailService.SendAsync(userToEmail.Email, "email verify", link);
+            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code }, Request.Scheme, Request.Host.ToString());
+            await _emailService.SendAsync(userToEmail.Email, "email verify", $"<a href=\"{link}\">Verify email</a>", true);
 
-            var userToReturn = new UserDTO();//zmapowac na zwracane wartosci, narazie zwraca tylko token
-            userToReturn.Token =await _tokenRepository.CreateToken(user);
-
-            return userToReturn;
+            return Ok("Registration succedded");
         }
-        public IActionResult VerifyEmail(string userId, string code) =>  View();
-        public IActionResult EmailVerification() =>  View();
-        
+        public async Task<ActionResult> VerifyEmail(string userId, string code)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return BadRequest();
+
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            const string link= "http://localhost:4200/succesfull-register";
+            if (result.Succeeded) return Redirect(link);
+
+            return BadRequest();
+
+        }
 
         [HttpPost("login")]
         public async Task<ActionResult<UserDTO>> Login(UserForLoginDTO userForLoginDTO)
@@ -84,10 +89,6 @@ namespace WhatsUp.API.Controllers
 
             return userToReturn;
         }
-        [HttpGet]
-        public ActionResult Get()
-        {
-            return Ok("retard");
-        }
+        
     }
 }
