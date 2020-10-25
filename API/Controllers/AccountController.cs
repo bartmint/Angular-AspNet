@@ -58,8 +58,8 @@ namespace WhatsUp.API.Controllers
             var userToEmail =await _accountRepository.GetUser(user.Email);
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(userToEmail);
             if (String.IsNullOrEmpty(code)) return BadRequest("bblabla");
-            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code }, Request.Scheme, Request.Host.ToString());
-            await _emailService.SendAsync(userToEmail.Email, "Confirm Email", $"<a href=\"{link}\">Confirm Email</a>", true);
+            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id.ToString(), code }, Request.Scheme, Request.Host.ToString());
+            await _emailService.SendAsync(userToEmail.Email, "Verify email", $"<a href=\"{link}\">Verify email</a>", true);
 
             return Ok("Registration succedded");
         }

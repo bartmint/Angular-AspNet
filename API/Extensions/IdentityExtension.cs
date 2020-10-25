@@ -7,6 +7,7 @@ using System.Text;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace WhatsUp.API.Extensions
 {
@@ -15,13 +16,18 @@ namespace WhatsUp.API.Extensions
         public static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration config)
         {
 
-            services.AddIdentity<AppUser, IdentityRole>(options =>
+            services.AddIdentityCore<AppUser>(options =>
             {
                 options.Password.RequireNonAlphanumeric = false;
                 options.SignIn.RequireConfirmedEmail = true;
+
             })
+                .AddRoles<AppRole>()
+                .AddRoleManager<RoleManager<AppRole>>()
+                .AddSignInManager<SignInManager<AppUser>>()
+                .AddRoleValidator<RoleValidator<AppRole>>()
                 .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders(); //just for generate token for email purpose
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -30,12 +36,13 @@ namespace WhatsUp.API.Extensions
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"])),
-                        ValidateIssuer = true,
-                        ValidateAudience = false
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
                         
                     };
+                    
                 });
-
+            
 
             return services;
                 

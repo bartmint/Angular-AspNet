@@ -12,7 +12,7 @@ import { AccountService } from './_services/account.service';
 export class AppComponent implements OnInit{
 
   baseUrl: string = environment.apiUrl;
-  constructor(private accountService: AccountService){}
+  constructor(private accountService: AccountService, private http: HttpClient){}
 
 
   ngOnInit() {
@@ -23,6 +23,11 @@ export class AppComponent implements OnInit{
       if(user){
         this.accountService.setCurrentUser(user);
       }}
+      getInfo(){
+        this.http.get(environment.apiUrl+'account').subscribe(response=>{
+          console.log(response);
+        })
+      }
   }
 
 

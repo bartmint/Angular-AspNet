@@ -30,6 +30,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddFluentValidation();
+            services.AddCors();
             services.AddDatabase(Configuration);
             services.AddDomain();
             services.AddIdentity(Configuration);
