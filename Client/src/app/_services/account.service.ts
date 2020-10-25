@@ -9,39 +9,35 @@ import { map } from 'rxjs/operators';
   providedIn: 'root' // powoduje ze w glownej app nie trzeba importowac accountservice, bo samo sie laduje
 })
 export class AccountService {
-
-  constructor(private http: HttpClient) { }
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
+  constructor(private http: HttpClient) { }
+  
 
-  setCurrentUser(user: User): void{
+
+  setCurrentUser(user: User){
     localStorage.setItem('user', JSON.stringify(user));
     this.currentUserSource.next(user);
   } // setting user in localStorage
 
 
-  login(model: User) {
+  login(model: any) {
     return this.http.post(this.baseUrl + 'account/login', model).pipe(
       map((user: User) => {
-        this.setCurrentUser(user);
+        if(user)this.setCurrentUser(user);
+        
     })
    // login metod calling setCurrentUser
     );
   }
-  logout(): void {
+  logout(){
     localStorage.removeItem('user'); // clear localStorage
     this.currentUserSource.next(null); // setting currentUserSource as null
   }
   register(model: any){
-    return this.http.post(this.baseUrl + 'account/register', model).pipe(
-      map((user: User) => {
-        if (user){
-          this.setCurrentUser(user);
-        }
-        return user;
-      })
-    );
+    return this.http.post(this.baseUrl + 'account/register', model);
   }
+  
 }

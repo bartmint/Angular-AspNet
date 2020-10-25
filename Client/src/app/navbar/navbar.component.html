@@ -1,0 +1,41 @@
+<div *ngIf="accountService.currentUser$ | async">
+    <li>
+        <p>zalogowany</p>
+    </li>
+</div>
+
+
+<div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
+    <button  class="dropdown-toggle text-black" dropdownToggle>Welcome </button>
+    <div class="dropdown-menu mt-3" *dropdownMenu>
+      <button class="dropdown-item" routerLink="/member/edit">Edit Profile</button>
+      <div class="dropdown-divider"></div>
+      <button class="dropdown-item" (click)="logout()" routerLink="/">Logout</button> 
+    </div>
+  </div>
+           
+           <div class="header-outside">
+                <div class="header-inside">
+                    <div class="ctor">
+                        <form *ngIf="(accountService.currentUser$ | async)===null" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+                            <input class="form-control mr-sm-2 " type="text" placeholder="Email" name="email"  required [(ngModel)]="model.email">
+                            <input class="form-control mr-sm-2 " type="password" placeholder="Password" name="password"  required [(ngModel)]="model.password">
+                            <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            
+    <!-- tutaj dodac jesli zalogowany -->
+
+    <!-- jesli nie zalogowany -->
+    
+
+
+
+
+
+
+

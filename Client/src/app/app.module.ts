@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing-modules';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './registration/register/register.component';
 import { SharedModule } from './_modules/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SuccesfullRegisterComponent } from './succesfull-register/succesfull-register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SuccesfullRegisterComponent } from './registration/succesfull-register/succesfull-register.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { SuccesfullRegisterComponent } from './succesfull-register/succesfull-re
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     
   ],
   providers: [

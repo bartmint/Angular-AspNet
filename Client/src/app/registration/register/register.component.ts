@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AccountService } from '../_services/account.service';
+import { environment } from 'src/environments/environment';
+import { AccountService } from '../../_services/account.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,8 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   validationErrors: string[] = [];
-  constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder, private router: Router) { }
+  baseUrl=environment.apiUrl;
+  constructor(private accountService: AccountService, private toastr: ToastrService, private fb: FormBuilder, private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.initializeform();
@@ -23,9 +26,7 @@ export class RegisterComponent implements OnInit {
 
   register(): void{
     this.accountService.register(this.registerForm.value).subscribe(response => {
-      this.router.navigateByUrl('succesfull-register');
-      this.accountService.login(response);
-      this.cancel();
+        console.log(response)
     }, error => {
       console.log(error);
       this.validationErrors = error;
@@ -33,6 +34,7 @@ export class RegisterComponent implements OnInit {
   }
   cancel(): void{
     this.cancelRegister.emit(false);
+    this.toastr.success('afdaf');
   }
 
 
@@ -56,6 +58,10 @@ export class RegisterComponent implements OnInit {
       return control?.value !== control?.parent?.controls[userName].value ? null : {isNotMatching: true};
     };
   }
-  
+  test(){
+    return this.http.get(this.baseUrl+'account/test').subscribe(response=>{
+      console.log(response);
+    })
+  }
 
 }

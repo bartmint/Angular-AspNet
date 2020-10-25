@@ -1,0 +1,8 @@
+.header-outside{
+    width:20vh;
+    margin-left:calc(100% - 20vh);
+    margin-top:1vh;
+}
+a{
+    color:black;
+}

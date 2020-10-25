@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 
 namespace WhatsUp.API.Extensions
 {
@@ -31,9 +32,8 @@ namespace WhatsUp.API.Extensions
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"])),
                         ValidateIssuer = true,
                         ValidateAudience = false
+                        
                     };
-                    
-
                 });
 
 

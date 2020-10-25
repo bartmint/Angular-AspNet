@@ -11,13 +11,12 @@ import { AccountService } from 'src/app/_services/account.service';
 export class AuthGuard implements CanActivate {
   constructor(private accountService: AccountService, private toastr: ToastrService){}
 
-  canActivate(): Observable<boolean>{
+  canActivate():
+  Observable<boolean> {
    return this.accountService.currentUser$.pipe(
      map(user => {
-       if (user) {console.log('authentication completed'); return true; }
-       // else
-       this.toastr.error('sory nie przejdziesz');
-       
+       if(user) {return true;}
+       this.toastr.error('you shall not pass');
      })
    );
   }

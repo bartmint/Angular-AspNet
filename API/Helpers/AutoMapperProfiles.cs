@@ -13,6 +13,7 @@ namespace API.Helpers
         {
             CreateMap<UserForRegisterDTO, AppUser>();
             CreateMap<UserForRegisterDTO, UserDTO>();
+            CreateMap<AppUser, UserDTO>();
         }
     }
 }

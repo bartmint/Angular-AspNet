@@ -6,11 +6,9 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { NavigationExtras, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { catchError, take } from 'rxjs/operators';
 import { AccountService } from 'src/app/_services/account.service';
 import { User } from '../_models/user';
+import { take } from 'rxjs/operators';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {

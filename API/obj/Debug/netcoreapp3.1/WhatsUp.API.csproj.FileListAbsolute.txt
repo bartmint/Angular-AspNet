@@ -91,4 +91,3 @@ C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.cspr
 C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\barte\source\repos\WhatsUP\API\obj\Debug\netcoreapp3.1\WhatsUp.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\WhatsUp.API.Views.dll
-C:\Users\barte\source\repos\WhatsUP\API\bin\Debug\netcoreapp3.1\WhatsUp.API.Views.pdb

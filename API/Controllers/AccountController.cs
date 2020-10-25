@@ -2,6 +2,8 @@
 using AutoMapper;
 using Domain.Abstractions;
 using Domain.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NETCore.MailKit.Core;
@@ -43,8 +45,8 @@ namespace WhatsUp.API.Controllers
             if (await _accountRepository.UserEmailExists(userForRegisterDTO.Email))
                 return BadRequest("The Email Provided is already taken");
 
-            if (await _accountRepository.UserUsernameExists(userForRegisterDTO.UserName))
-                return BadRequest("The Username Provided is already taken"); //do wywalenia
+            //if (await _accountRepository.UserUsernameExists(userForRegisterDTO.UserName))
+            //    return BadRequest("The Username Provided is already taken"); //do wywalenia
 
             var user = _mapper.Map<AppUser>(userForRegisterDTO);
 
@@ -57,7 +59,7 @@ namespace WhatsUp.API.Controllers
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(userToEmail);
             if (String.IsNullOrEmpty(code)) return BadRequest("bblabla");
             var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code }, Request.Scheme, Request.Host.ToString());
-            await _emailService.SendAsync(userToEmail.Email, "email verify", $"<a href=\"{link}\">Verify email</a>", true);
+            await _emailService.SendAsync(userToEmail.Email, "Confirm Email", $"<a href=\"{link}\">Confirm Email</a>", true);
 
             return Ok("Registration succedded");
         }
@@ -84,11 +86,16 @@ namespace WhatsUp.API.Controllers
             var resultLogin =await _signInManager.CheckPasswordSignInAsync(userFromRepo, userForLoginDTO.Password, false);
             if (!resultLogin.Succeeded) return Unauthorized();
 
-            var userToReturn = new UserDTO();
+            var userToReturn = _mapper.Map<UserDTO>(userFromRepo);
             userToReturn.Token = await _tokenRepository.CreateToken(userFromRepo);
 
             return userToReturn;
         }
-        
+        [HttpGet]
+        [Authorize]
+        public ActionResult Get()
+        {
+            return Ok("twoja stara w basenie");
+        }
     }
 }
