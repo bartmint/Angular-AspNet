@@ -45,9 +45,6 @@ namespace WhatsUp.API.Controllers
             if (await _accountRepository.UserEmailExists(userForRegisterDTO.Email))
                 return BadRequest("The Email Provided is already taken");
 
-            //if (await _accountRepository.UserUsernameExists(userForRegisterDTO.UserName))
-            //    return BadRequest("The Username Provided is already taken"); //do wywalenia
-
             var user = _mapper.Map<AppUser>(userForRegisterDTO);
 
             var result =await _userManager.CreateAsync(user, userForRegisterDTO.Password);
@@ -58,14 +55,15 @@ namespace WhatsUp.API.Controllers
             var userToEmail =await _accountRepository.GetUser(user.Email);
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(userToEmail);
             if (String.IsNullOrEmpty(code)) return BadRequest("bblabla");
-            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id.ToString(), code }, Request.Scheme, Request.Host.ToString());
+            var link = Url.Action(nameof(VerifyEmail), "Account", new { userId=userToEmail.Id, code }, Request.Scheme, Request.Host.ToString());
             await _emailService.SendAsync(userToEmail.Email, "Verify email", $"<a href=\"{link}\">Verify email</a>", true);
 
             return Ok("Registration succedded");
         }
+        [HttpGet]
         public async Task<ActionResult> VerifyEmail(string userId, string code)
         {
-            var user = await _userManager.FindByIdAsync(userId);
+            var user = await _userManager.FindByIdAsync(userId.ToString());
             if (user == null) return BadRequest();
 
             var result = await _userManager.ConfirmEmailAsync(user, code);
@@ -91,11 +89,6 @@ namespace WhatsUp.API.Controllers
 
             return userToReturn;
         }
-        [HttpGet]
-        [Authorize]
-        public ActionResult Get()
-        {
-            return Ok("twoja stara w basenie");
-        }
+        
     }
 }

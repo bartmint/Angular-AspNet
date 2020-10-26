@@ -8,8 +8,8 @@ using System.Text;
 
 namespace Infrastructure.Data
 {
-    public class AppDbContext: IdentityDbContext<AppUser, AppRole,int, IdentityUserClaim<int>, AppUserRole, IdentityUserLogin<int>,
-        IdentityRoleClaim<int>, IdentityUserToken<int>>
+    public class AppDbContext: IdentityDbContext<AppUser, AppRole,string, IdentityUserClaim<string>, AppUserRole, IdentityUserLogin<string>,
+        IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options) { }
 
@@ -28,6 +28,9 @@ namespace Infrastructure.Data
                 .WithOne(u => u.Role)
                 .HasForeignKey(r => r.RoleId)
                 .IsRequired();
+            builder.Entity<AppUser>()
+                .Property(e => e.Id)
+                .ValueGeneratedOnAdd(); //generate string id to appUser table
         }
     }
 }
