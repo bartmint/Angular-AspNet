@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Models
 {
-    public class AppRole: IdentityRole<int>
+    public class AppRole: IdentityRole<string>
     {
         public ICollection<AppUserRole> UserRoles { get; set; }
     }
