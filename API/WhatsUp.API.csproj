@@ -1,14 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>caf81104-02a9-4f71-be8c-f4f526bdec49</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="5.1.0" />
@@ -23,6 +22,4 @@
     </PackageReference>
     <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
   </ItemGroup>
-
-
 </Project>
