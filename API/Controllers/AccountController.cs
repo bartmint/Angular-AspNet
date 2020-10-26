@@ -60,7 +60,7 @@ namespace WhatsUp.API.Controllers
 
             return Ok("Registration succedded");
         }
-        [HttpGet]
+        [HttpGet("VerifyEmail")]
         public async Task<ActionResult> VerifyEmail(string userId, string code)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
@@ -88,6 +88,18 @@ namespace WhatsUp.API.Controllers
             userToReturn.Token = await _tokenRepository.CreateToken(userFromRepo);
 
             return userToReturn;
+        }
+        [HttpGet]
+        [Authorize]
+        public ActionResult<List<string>> Get()
+        {
+            var list = new List<string>()
+            {
+                new string("Testowane"),
+                new string("uwierzytelnianie"),
+                new string("w Account controller.")
+            };
+            return Ok(list);
         }
         
     }
