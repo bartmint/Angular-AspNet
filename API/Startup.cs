@@ -14,6 +14,7 @@ using FluentValidation.AspNetCore;
 using WhatsUp.API.ViewModels;
 using NETCore.MailKit.Extensions;
 using NETCore.MailKit.Infrastructure.Internal;
+using WhatsUp.API.Middleware;
 
 namespace API
 {
@@ -42,10 +43,7 @@ namespace API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseMiddleware<ExceptionMiddleware>(); //custom handling errors middleware
             app.UseHttpsRedirection();
 
             app.UseRouting();
