@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj": {
+    "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj"
+              "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj"
               }
             }
           }

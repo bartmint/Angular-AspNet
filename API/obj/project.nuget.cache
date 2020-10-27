@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Glu6H1mHV7pISTZht/4GOifQWrV4oS3QldRFh2LClWg89pQnUFMFAVTOwiUrsVfGx+v7iG0DukRHfR0dmchzQ==",
+  "dgSpecHash": "ZFGi6FZnQNUloPrllmBrGxqhwo0Rp79559TgJGYKNY0u5xMkwjfz2CmufkibpPgQCELXOCTcUmvd9bIBbKaBMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\API\\WhatsUp.API.csproj",
+  "projectFilePath": "C:\\Users\\barte\\source\\repos\\Authentication\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

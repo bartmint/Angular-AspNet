@@ -601,11 +601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\barte\\source\\repos\\Authentication\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Application\\obj\\",
+      "outputPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -621,8 +621,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Domain\\Domain.csproj"
+            "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\barte\\source\\repos\\Authentication\\Domain\\Domain.csproj"
             }
           }
         }

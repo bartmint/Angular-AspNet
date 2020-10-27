@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatsUp.API", "API\WhatsUp.API.csproj", "{CDEED6DE-A157-4C09-B2B7-81D7FC243A72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{CDEED6DE-A157-4C09-B2B7-81D7FC243A72}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client", "Client\", "{CBFC339F-38B0-4ECE-9D73-CBF7C04D19CF}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -26,17 +26,17 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client", "Client\", "{CBFC3
 		SlnRelativePath = "Client\"
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhatsUp.Application", "WhatsUp.Application", "{E5B6F335-918C-4DEF-B432-F8F4AD898E0A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E5B6F335-918C-4DEF-B432-F8F4AD898E0A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhatsUp.Domain", "WhatsUp.Domain", "{5F80E7FD-2370-4B4F-82F0-47C0BE4228C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5F80E7FD-2370-4B4F-82F0-47C0BE4228C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhatsUp.Infrastructure", "WhatsUp.Infrastructure", "{9796E62C-BB60-4BDA-9CFC-0B509FD7EA14}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9796E62C-BB60-4BDA-9CFC-0B509FD7EA14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{9CA9308C-50A4-421E-8EEA-0643A83D01AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{9CA9308C-50A4-421E-8EEA-0643A83D01AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{739DA227-0DAD-4B04-AA8B-929E6BB86834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{739DA227-0DAD-4B04-AA8B-929E6BB86834}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9748BD47-83A3-4B51-88F0-0DA5E26B7DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9748BD47-83A3-4B51-88F0-0DA5E26B7DFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZholiQmod826crr1txSfK9U5FqDMfU6jSW1sns0SJy9u6TlrJwBkJTvERAqxfG+7EUoLP+yMRxB8yAORXTzDVQ==",
+  "dgSpecHash": "+JOlUk79P4usZMgxF8+5Csq5HpUSSzFzzv9I/Hf7mAiZTUEQvrybZbQf7jKfTFuV4vcp0saNZK71iFrcW8i8ag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\barte\\source\\repos\\Authentication\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PBfoIfJrE22oUZVLhhlCayneCdZCDRgKdBpDndoGkJ0s6sMnhd+jbBpD0w9uemaMdwBF++hjusXxSKG2njXC4A==",
+  "dgSpecHash": "mwDGmbfEz+zpcoV4mXqIDMTbGZ+vb4piJbaJoTQgpEYcbEf9yTqahJzq5RJm0l4CHZBRqMsYMkj4+8wYntzKpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\barte\\source\\repos\\WhatsUP\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\barte\\source\\repos\\Authentication\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
