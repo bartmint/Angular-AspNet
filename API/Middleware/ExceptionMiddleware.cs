@@ -19,9 +19,9 @@ namespace WhatsUp.API.Middleware
             _logger = logger;
             _env = env;
         }
-        public RequestDelegate _next { get; set; }
-        public ILogger _logger { get; set; }
-        public IHostEnvironment _env { get; set; }
+        public RequestDelegate _next { get; }
+        public ILogger _logger { get; }
+        public IHostEnvironment _env { get; }
         public async Task InvokeAsync(HttpContext context)
         {
             try
@@ -37,6 +37,7 @@ namespace WhatsUp.API.Middleware
                 var response = _env.IsDevelopment()
                     ? new ApiException(context.Response.StatusCode, ex.Message, ex.StackTrace?.ToString())
                     : new ApiException(context.Response.StatusCode, "Internal Server Error");
+
 
                 var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
                 var fullResponse = JsonSerializer.Serialize(response, options);

@@ -89,18 +89,5 @@ namespace WhatsUp.API.Controllers
 
             return userToReturn;
         }
-        [HttpGet]
-        [Authorize]
-        public ActionResult<List<string>> Get()
-        {
-            var list = new List<string>()
-            {
-                new string("Testowane"),
-                new string("uwierzytelnianie"),
-                new string("w Account controller.")
-            };
-            return Ok(list);
-        }
-        
     }
 }

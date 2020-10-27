@@ -13,6 +13,9 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SuccesfullRegisterComponent } from './registration/succesfull-register/succesfull-register.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { ErrorsInterceptor } from './_interceptors/errors.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { SuccesfullRegisterComponent } from './registration/succesfull-register/
     NavbarComponent,
     DateInputComponent,
     TextInputComponent,
-    SuccesfullRegisterComponent
+    SuccesfullRegisterComponent,
+    NotFoundComponent,
+    ServerErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -32,10 +37,12 @@ import { SuccesfullRegisterComponent } from './registration/succesfull-register/
     SharedModule,
     ReactiveFormsModule,
     FormsModule
-    
+
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorsInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+
   ],
   bootstrap: [AppComponent]
 })
